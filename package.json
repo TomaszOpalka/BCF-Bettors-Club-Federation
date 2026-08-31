@@ -1,0 +1,20 @@
+{
+  "name": "bcf-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c green,cyan \"pnpm --filter @bcf/server dev\" \"pnpm --filter @bcf/web dev\"",
+    "build": "pnpm --filter @bcf/server build && pnpm --filter @bcf/web build",
+    "start": "pnpm --filter @bcf/server start",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "typescript": "^7.0.2"
+  }
+}

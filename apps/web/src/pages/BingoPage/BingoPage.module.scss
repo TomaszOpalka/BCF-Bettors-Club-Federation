@@ -1,0 +1,54 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.loading {
+  padding: $space-8 0;
+  text-align: center;
+  color: var(--bcf-text-muted);
+}
+
+.intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: $space-5;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  p {
+    margin: 0;
+    max-width: 620px;
+    color: var(--bcf-text-muted);
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.counter {
+  padding: $space-2 $space-4;
+  border-radius: var(--bcf-radius-pill);
+  border: 1px solid var(--bcf-border);
+  background: var(--bcf-surface);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--bcf-accent-strong);
+}
+
+.adminLink {
+  font-size: 0.85rem;
+  color: var(--bcf-text-muted);
+
+  &:hover {
+    color: var(--bcf-accent-strong);
+  }
+}

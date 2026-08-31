@@ -1,0 +1,144 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $space-5;
+  padding: $space-4 $space-6;
+  border-bottom: 1px solid var(--bcf-border);
+  background: rgba(20, 22, 26, 0.72);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  @include below($bp-mobile) {
+    padding: $space-3 $space-4;
+    gap: $space-3;
+    flex-wrap: wrap;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  color: var(--bcf-text);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+
+  strong {
+    font-size: 1.02rem;
+    letter-spacing: 0.06em;
+  }
+
+  small {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bcf-text-muted);
+  }
+
+  @include below($bp-mobile) {
+    small {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $space-2;
+  margin-left: auto;
+}
+
+.navLink {
+  padding: $space-2 $space-4;
+  border-radius: var(--bcf-radius-pill);
+  border: 1px solid transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--bcf-text-muted);
+  transition: all $transition-fast;
+
+  &:hover {
+    color: var(--bcf-text);
+    text-decoration: none;
+  }
+}
+
+.navLinkActive {
+  color: var(--bcf-accent-strong);
+  border-color: rgba(31, 164, 99, 0.45);
+  background: var(--bcf-accent-soft);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bcf-text-muted);
+
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+
+.online i {
+  color: var(--bcf-accent-strong);
+  box-shadow: 0 0 0 4px rgba(31, 164, 99, 0.16);
+}
+
+.offline i {
+  color: var(--bcf-red);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: $space-6;
+
+  @include below($bp-mobile) {
+    padding: $space-4;
+  }
+}
+
+.loading {
+  padding: $space-8 0;
+  text-align: center;
+  color: var(--bcf-text-muted);
+}
+
+.footer {
+  padding: $space-5 $space-6;
+  border-top: 1px solid var(--bcf-border);
+  font-size: 0.8rem;
+  color: var(--bcf-text-muted);
+  text-align: center;
+}

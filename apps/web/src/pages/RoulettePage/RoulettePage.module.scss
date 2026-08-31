@@ -1,0 +1,114 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.intro {
+  max-width: 640px;
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  p {
+    margin: 0;
+    color: var(--bcf-text-muted);
+  }
+
+  code {
+    font-family: $font-mono;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--bcf-surface-raised);
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+  gap: $space-5;
+  align-items: start;
+
+  @include below($bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wheelColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  flex-wrap: wrap;
+}
+
+.warning {
+  font-size: 0.88rem;
+  color: var(--bcf-text-muted);
+}
+
+.history {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+
+  ul {
+    display: flex;
+    gap: $space-2;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  li {
+    display: grid;
+    place-items: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 $space-1;
+    border-radius: var(--bcf-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.historyLabel {
+  @include section-title;
+}
+
+.historyEmpty {
+  font-size: 0.88rem;
+  color: var(--bcf-text-muted);
+}
+
+.green {
+  background: var(--bcf-accent);
+}
+
+.red {
+  background: var(--bcf-red);
+}
+
+.black {
+  background: #202329;
+  border: 1px solid var(--bcf-border-strong);
+}
+
+.betCard {
+  position: sticky;
+  top: 96px;
+
+  @include below($bp-tablet) {
+    position: static;
+  }
+}

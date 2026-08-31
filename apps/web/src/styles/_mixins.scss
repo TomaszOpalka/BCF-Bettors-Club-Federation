@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+@mixin below($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin card {
+  background: var(--bcf-surface);
+  border: 1px solid var(--bcf-border);
+  border-radius: var(--bcf-radius-lg);
+  box-shadow: $shadow-md;
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--bcf-accent-strong);
+    outline-offset: 2px;
+  }
+}
+
+@mixin section-title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bcf-text-muted);
+}

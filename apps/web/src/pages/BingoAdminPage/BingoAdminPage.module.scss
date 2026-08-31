@@ -1,0 +1,141 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.loading {
+  padding: $space-8 0;
+  text-align: center;
+  color: var(--bcf-text-muted);
+}
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-4;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  p {
+    margin: 0;
+    max-width: 620px;
+    color: var(--bcf-text-muted);
+  }
+}
+
+.loginWrapper {
+  display: grid;
+  place-items: center;
+  padding: $space-8 0;
+}
+
+.loginCard {
+  width: min(400px, 100%);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  label {
+    @include section-title;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: $space-3;
+  border-radius: var(--bcf-radius-sm);
+  border: 1px solid var(--bcf-border-strong);
+  background: var(--bcf-bg-deep);
+  color: var(--bcf-text);
+  font: inherit;
+
+  &:focus-visible {
+    outline: 2px solid var(--bcf-accent-strong);
+    outline-offset: 1px;
+  }
+}
+
+.cellGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: $space-3;
+
+  @include below($bp-tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below($bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cellField {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  span {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--bcf-text-muted);
+  }
+
+  textarea {
+    width: 100%;
+    padding: $space-2;
+    border-radius: var(--bcf-radius-sm);
+    border: 1px solid var(--bcf-border);
+    background: var(--bcf-bg-deep);
+    color: var(--bcf-text);
+    font: inherit;
+    font-size: 0.85rem;
+    resize: vertical;
+
+    &:focus-visible {
+      outline: 2px solid var(--bcf-accent-strong);
+      outline-offset: 1px;
+    }
+  }
+}
+
+.error,
+.notice {
+  margin: 0;
+  padding: $space-3;
+  border-radius: var(--bcf-radius-sm);
+  font-size: 0.9rem;
+}
+
+.error {
+  background: var(--bcf-red-soft);
+  color: #f0857e;
+}
+
+.notice {
+  background: var(--bcf-accent-soft);
+  color: var(--bcf-accent-strong);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  font-size: 0.88rem;
+  color: var(--bcf-text-muted);
+
+  &:hover {
+    color: var(--bcf-accent-strong);
+  }
+}

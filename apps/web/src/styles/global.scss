@@ -1,0 +1,98 @@
+:root {
+  --bcf-bg: #{$color-bg};
+  --bcf-bg-deep: #{$color-bg-deep};
+  --bcf-surface: #{$color-surface};
+  --bcf-surface-raised: #{$color-surface-raised};
+  --bcf-border: #{$color-border};
+  --bcf-border-strong: #{$color-border-strong};
+
+  --bcf-accent: #{$color-accent};
+  --bcf-accent-strong: #{$color-accent-strong};
+  --bcf-accent-soft: #{$color-accent-soft};
+
+  --bcf-red: #{$color-red};
+  --bcf-red-soft: #{$color-red-soft};
+  --bcf-black: #{$color-black};
+  --bcf-gold: #{$color-gold};
+
+  --bcf-text: #{$color-text};
+  --bcf-text-muted: #{$color-text-muted};
+
+  --bcf-radius-sm: #{$radius-sm};
+  --bcf-radius-md: #{$radius-md};
+  --bcf-radius-lg: #{$radius-lg};
+  --bcf-radius-pill: #{$radius-pill};
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--bcf-text);
+  background:
+    radial-gradient(1100px 620px at 50% -12%, rgba(31, 164, 99, 0.16), transparent 62%),
+    var(--bcf-bg);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 $space-3;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 $space-3;
+}
+
+a {
+  color: var(--bcf-accent-strong);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--bcf-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-border-strong;
+  border-radius: $radius-pill;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-deep;
+}
