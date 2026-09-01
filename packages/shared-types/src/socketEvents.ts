@@ -9,7 +9,7 @@ export interface BingoCellToggledPayload {
 
 export interface SocketErrorPayload {
   message: string;
-  /** Ustawiane przy odrzuconym spinie — kiedy (czas serwera) można spróbować ponownie. */
+  /** Ustawiane przy odrzuconym spinie - kiedy (czas serwera) można spróbować ponownie. */
   retryAt?: number;
 }
 

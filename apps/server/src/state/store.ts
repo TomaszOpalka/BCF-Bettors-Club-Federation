@@ -10,7 +10,7 @@ import { config } from '../config';
 
 /**
  * Jedyne miejsce z persystencją. Na etapie Supabase podmieniamy wnętrze tego
- * modułu na klienta bazy — serwisy i handlery zostają bez zmian.
+ * modułu na klienta bazy - serwisy i handlery zostają bez zmian.
  */
 export interface PersistedState {
   bingo: BingoBoard;
@@ -100,7 +100,7 @@ function load(): PersistedState {
     if (!existsSync(config.stateFilePath)) return createDefaultState();
     return sanitize(JSON.parse(readFileSync(config.stateFilePath, 'utf8')));
   } catch (error) {
-    console.warn('[store] Nie udało się wczytać state.json — startuję z domyślnym stanem.', error);
+    console.warn('[store] Nie udało się wczytać state.json - startuję z domyślnym stanem.', error);
     return createDefaultState();
   }
 }
@@ -117,7 +117,7 @@ function writeToDisk(): void {
   }
 }
 
-/** Zapis jest zdebouncowany — klikanie w bingo nie ma bić w dysk przy każdym polu. */
+/** Zapis jest zdebouncowany - klikanie w bingo nie ma bić w dysk przy każdym polu. */
 function scheduleSave(): void {
   if (saveTimer) return;
   saveTimer = setTimeout(() => {
@@ -137,7 +137,7 @@ export const store = {
     scheduleSave();
   },
 
-  /** Natychmiastowy zapis — używane przy zamykaniu procesu. */
+  /** Natychmiastowy zapis - używane przy zamykaniu procesu. */
   flush(): void {
     if (saveTimer) {
       clearTimeout(saveTimer);

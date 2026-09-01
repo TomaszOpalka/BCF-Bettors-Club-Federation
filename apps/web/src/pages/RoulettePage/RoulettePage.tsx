@@ -37,7 +37,7 @@ export function RoulettePage() {
       <header className={styles.intro}>
         <h1>Ruletka</h1>
         <p>
-          Wynik losuje serwer (<code>node:crypto</code>) i rozsyła go do wszystkich naraz — każdy
+          Wynik losuje serwer (<code>node:crypto</code>) i rozsyła go do wszystkich naraz - każdy
           widzi to samo losowanie w tej samej sekundzie.
         </p>
       </header>

@@ -52,7 +52,7 @@ class RouletteService {
       const secondsLeft = Math.ceil((this.cooldownUntil - now) / 1000);
       return {
         ok: false,
-        message: `Chwila przerwy — kolejny spin za ${secondsLeft} s.`,
+        message: `Chwila przerwy - kolejny spin za ${secondsLeft} s.`,
         retryAt: this.cooldownUntil,
       };
     }

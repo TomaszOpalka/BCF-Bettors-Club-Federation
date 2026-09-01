@@ -17,7 +17,7 @@ export function registerBingoHandlers(io: TypedServer, socket: TypedSocket): voi
     const delta = bingoService.toggleCell(parsed.data.index);
     if (!delta) return;
 
-    // Broadcast do wszystkich łącznie z nadawcą — serwer jest źródłem prawdy.
+    // Broadcast do wszystkich łącznie z nadawcą - serwer jest źródłem prawdy.
     io.emit('bingo:cell-toggled', delta);
   });
 }

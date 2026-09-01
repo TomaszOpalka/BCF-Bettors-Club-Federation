@@ -5,7 +5,7 @@ import { BingoAdminPage } from '@/pages/BingoAdminPage/BingoAdminPage';
 import { BingoPage } from '@/pages/BingoPage/BingoPage';
 import { HomePage } from '@/pages/HomePage/HomePage';
 
-// three.js waży ~600 kB — ładujemy je dopiero przy wejściu na /ruletka.
+// three.js waży ~600 kB - ładujemy je dopiero przy wejściu na /ruletka.
 const RoulettePage = lazy(() =>
   import('@/pages/RoulettePage/RoulettePage').then((module) => ({ default: module.RoulettePage })),
 );

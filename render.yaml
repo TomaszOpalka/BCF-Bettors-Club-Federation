@@ -1,5 +1,5 @@
 # Konfiguracja "Blueprint" dla Render (https://dashboard.render.com → New → Blueprint).
-# Render sam wykryje ten plik po podłączeniu repo — trzeba tylko uzupełnić
+# Render sam wykryje ten plik po podłączeniu repo - trzeba tylko uzupełnić
 # 3 zmienne oznaczone `sync: false` (Render poprosi o nie w formularzu).
 services:
   - type: web
@@ -13,7 +13,7 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      # Hasło do panelu /bingo/admin — ustaw własne w formularzu Render.
+      # Hasło do panelu /bingo/admin - ustaw własne w formularzu Render.
       - key: ADMIN_PASSWORD
         sync: false
       # Długi losowy ciąg do podpisywania sesji admina (JWT).

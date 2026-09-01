@@ -14,7 +14,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Dzięki temu każdy *.module.scss ma od razu zmienne i miksiny —
+        // Dzięki temu każdy *.module.scss ma od razu zmienne i miksiny -
         // NIE dopisuj w modułach własnego `@use 'variables'` (podwójny @use = błąd Sass).
         loadPaths: [fileURLToPath(new URL('./src/styles', import.meta.url))],
         additionalData: `@use 'variables' as *;\n@use 'mixins' as *;\n`,

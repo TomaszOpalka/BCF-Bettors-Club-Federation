@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { config } from '../config';
 
 /**
- * Minimalny auth na jedno konto (admin) — hasło z ENV + JWT w httpOnly cookie.
+ * Minimalny auth na jedno konto (admin) - hasło z ENV + JWT w httpOnly cookie.
  * Pełny system użytkowników dochodzi dopiero na etapie Supabase.
  */
 interface AdminTokenPayload {

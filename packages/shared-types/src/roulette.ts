@@ -1,6 +1,6 @@
 /**
  * Kontrakt ruletki wspólny dla `apps/web` i `apps/server`.
- * Losowanie ZAWSZE po stronie serwera (node:crypto) — klient wyłącznie animuje.
+ * Losowanie ZAWSZE po stronie serwera (node:crypto) - klient wyłącznie animuje.
  */
 
 /** Kolejność pól na kole ruletki europejskiej (zgodnie z ruchem wskazówek zegara od 0). */
@@ -17,7 +17,7 @@ export const RED_NUMBERS: readonly number[] = [
 /** 37 pól: 0 (zielone) + 1..36. */
 export const ROULETTE_POCKET_COUNT = EUROPEAN_WHEEL_ORDER.length;
 
-/** Długość animacji spinu — ta sama na serwerze i kliencie. */
+/** Długość animacji spinu - ta sama na serwerze i kliencie. */
 export const SPIN_DURATION_MS = 7_000;
 
 /** Przerwa po rundzie, zanim ktokolwiek może zakręcić ponownie. */
@@ -33,17 +33,17 @@ export function getRouletteColor(pocket: number): RouletteColor {
   return RED_NUMBERS.includes(pocket) ? 'red' : 'black';
 }
 
-/** Pozycja numeru na kole (indeks w EUROPEAN_WHEEL_ORDER) — potrzebna do animacji. */
+/** Pozycja numeru na kole (indeks w EUROPEAN_WHEEL_ORDER) - potrzebna do animacji. */
 export function getWheelIndex(pocket: number): number {
   return EUROPEAN_WHEEL_ORDER.indexOf(pocket as (typeof EUROPEAN_WHEEL_ORDER)[number]);
 }
 
-/** Trwająca runda. `number` jest znany od razu — klient animuje dojazd do wyniku. */
+/** Trwająca runda. `number` jest znany od razu - klient animuje dojazd do wyniku. */
 export interface RouletteRound {
   roundId: string;
   number: number;
   color: RouletteColor;
-  /** Znacznik czasu SERWERA (epoch ms) — klient koryguje o własny offset zegara. */
+  /** Znacznik czasu SERWERA (epoch ms) - klient koryguje o własny offset zegara. */
   startedAt: number;
   durationMs: number;
 }
@@ -57,12 +57,12 @@ export interface RouletteResult {
 
 export type RoulettePhase = 'idle' | 'spinning';
 
-/** Pełny stan wysyłany przy połączeniu — pozwala wskoczyć w środek trwającego spinu. */
+/** Pełny stan wysyłany przy połączeniu - pozwala wskoczyć w środek trwającego spinu. */
 export interface RouletteStateSnapshot {
   phase: RoulettePhase;
   round: RouletteRound | null;
   history: RouletteResult[];
   cooldownUntil: number;
-  /** Czas serwera w momencie wysyłki — klient liczy z tego offset zegara. */
+  /** Czas serwera w momencie wysyłki - klient liczy z tego offset zegara. */
   serverTime: number;
 }

@@ -95,7 +95,7 @@ export const useRouletteStore = create<RouletteState>()(
       placeBet: (kind, amount, pocket) => {
         const { phase, balance } = get();
         if (phase === 'spinning') {
-          set({ errorMessage: 'Runda trwa — zakłady zamknięte.' });
+          set({ errorMessage: 'Runda trwa - zakłady zamknięte.' });
           return;
         }
         if (amount > balance) {
@@ -125,7 +125,7 @@ export const useRouletteStore = create<RouletteState>()(
     }),
     {
       name: 'bcf-roulette',
-      // Live'owy stan rundy pochodzi z serwera — lokalnie trzymamy tylko fake balans.
+      // Live'owy stan rundy pochodzi z serwera - lokalnie trzymamy tylko fake balans.
       partialize: (state) => ({ balance: state.balance }),
     },
   ),

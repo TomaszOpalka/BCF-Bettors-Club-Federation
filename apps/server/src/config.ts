@@ -25,18 +25,18 @@ export const config = {
 
   corsOrigins: parseOrigins(process.env.CORS_ORIGIN),
 
-  /** Plik ze stanem — zastąpi go Supabase na kolejnym etapie. */
+  /** Plik ze stanem - zastąpi go Supabase na kolejnym etapie. */
   stateFilePath: fileURLToPath(new URL('../data/state.json', import.meta.url)),
-  /** Build frontendu — jeśli istnieje, serwer wystawia go na tym samym porcie. */
+  /** Build frontendu - jeśli istnieje, serwer wystawia go na tym samym porcie. */
   webDistPath: fileURLToPath(new URL('../../web/dist', import.meta.url)),
 } as const;
 
 export function warnAboutInsecureDefaults(): void {
   if (!config.isProduction) return;
   if (config.adminPassword === DEV_ADMIN_PASSWORD) {
-    console.warn('[config] UWAGA: ADMIN_PASSWORD nie jest ustawione — używam domyślnego hasła!');
+    console.warn('[config] UWAGA: ADMIN_PASSWORD nie jest ustawione - używam domyślnego hasła!');
   }
   if (config.jwtSecret === DEV_JWT_SECRET) {
-    console.warn('[config] UWAGA: JWT_SECRET nie jest ustawione — sesje admina są do podrobienia!');
+    console.warn('[config] UWAGA: JWT_SECRET nie jest ustawione - sesje admina są do podrobienia!');
   }
 }

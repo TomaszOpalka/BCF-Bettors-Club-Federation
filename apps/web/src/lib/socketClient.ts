@@ -15,7 +15,7 @@ const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 /**
  * Jedna instancja na całą aplikację. Bez `VITE_SERVER_URL` łączymy się z tym
- * samym originem — w dev Vite proxuje /socket.io na backend.
+ * samym originem - w dev Vite proxuje /socket.io na backend.
  */
 export const socket: BcfSocket = serverUrl
   ? io(serverUrl, createOptions())

@@ -47,7 +47,7 @@ export function AppLayout() {
       </main>
 
       <footer className={styles.footer}>
-        <span>BCF — wewnętrzna rozrywka biurowa. Gramy o punkty, nie o pieniądze.</span>
+        <span>Apka jest w pełni zvibe codowana nie podpisuję się pod nią testowałem możliwości</span>
       </footer>
     </div>
   );

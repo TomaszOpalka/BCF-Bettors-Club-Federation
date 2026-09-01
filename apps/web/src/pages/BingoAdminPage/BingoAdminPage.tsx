@@ -71,7 +71,7 @@ export function BingoAdminPage() {
 
     try {
       await adminApi.saveBoard({ title, cells });
-      setNotice('Zapisano — plansza odświeżyła się u wszystkich.');
+      setNotice('Zapisano - plansza odświeżyła się u wszystkich.');
     } catch (saveError) {
       setError(saveError instanceof Error ? saveError.message : 'Zapis nie powiódł się.');
     } finally {
@@ -136,7 +136,7 @@ export function BingoAdminPage() {
     <div className={styles.page}>
       <header className={styles.intro}>
         <div>
-          <h1>Panel admina — bingo</h1>
+          <h1>Panel admina - bingo</h1>
           <p>Edytuj treść 25 pól. Zapis rozsyła nową planszę do wszystkich otwartych przeglądarek.</p>
         </div>
         <Button variant="ghost" onClick={handleLogout}>

@@ -106,7 +106,7 @@ export function BetPanel() {
       <div className={styles.slip}>
         <span className={styles.label}>Kupon</span>
         {bets.length === 0 ? (
-          <p className={styles.empty}>Brak zakładów — wybierz żeton i kliknij pole.</p>
+          <p className={styles.empty}>Brak zakładów - wybierz żeton i kliknij pole.</p>
         ) : (
           <ul className={styles.betList}>
             {bets.map((bet) => (

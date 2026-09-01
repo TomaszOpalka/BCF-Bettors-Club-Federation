@@ -7,7 +7,7 @@ import {
 import { store } from '../state/store';
 
 /**
- * Cała logika planszy w jednym miejscu — przy przejściu na Supabase zmienia się
+ * Cała logika planszy w jednym miejscu - przy przejściu na Supabase zmienia się
  * tylko warstwa `store`, publiczne API serwisu zostaje.
  */
 class BingoService {
@@ -32,7 +32,7 @@ class BingoService {
     return payload;
   }
 
-  /** Edycja treści przez admina — zaznaczenia zostają nietknięte. */
+  /** Edycja treści przez admina - zaznaczenia zostają nietknięte. */
   setContent(content: BingoBoardContent): BingoBoard {
     store.update((draft) => {
       draft.bingo.title = content.title;
@@ -47,7 +47,7 @@ class BingoService {
     return this.getBoard();
   }
 
-  /** Czyszczenie krzyżyków na nowy dzień — treść pól zostaje. */
+  /** Czyszczenie krzyżyków na nowy dzień - treść pól zostaje. */
   resetMarks(): BingoBoard {
     store.update((draft) => {
       for (const cell of draft.bingo.cells) {

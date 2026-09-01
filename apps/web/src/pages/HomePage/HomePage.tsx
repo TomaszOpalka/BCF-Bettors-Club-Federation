@@ -8,7 +8,7 @@ export function HomePage() {
 
       <h1 className={styles.title}>Bettors Club Federation</h1>
       <p className={styles.subtitle}>
-        Biurowa ruletka i bingo na żywo. Jedno losowanie, wszyscy widzą to samo — bez logowania,
+        Biurowa ruletka i bingo na żywo. Jedno losowanie, wszyscy widzą to samo - bez logowania,
         bez instalacji, wystarczy otworzyć stronę.
       </p>
 

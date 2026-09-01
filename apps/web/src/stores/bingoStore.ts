@@ -12,7 +12,7 @@ export const useBingoStore = create<BingoState>()((set) => ({
 
   setBoard: (board) => set({ board }),
 
-  // Serwer jest źródłem prawdy — przyjmujemy wyłącznie potwierdzoną deltę.
+  // Serwer jest źródłem prawdy - przyjmujemy wyłącznie potwierdzoną deltę.
   applyToggle: ({ index, marked, updatedAt }) =>
     set((state) => {
       if (!state.board) return state;

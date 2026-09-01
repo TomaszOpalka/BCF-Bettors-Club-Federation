@@ -1,7 +1,7 @@
 import { rouletteService } from '../services/rouletteService';
 import type { TypedServer, TypedSocket } from './types';
 
-/** Wynik rundy leci do wszystkich — rejestrowane raz, przy starcie serwera. */
+/** Wynik rundy leci do wszystkich - rejestrowane raz, przy starcie serwera. */
 export function registerRouletteBroadcast(io: TypedServer): void {
   rouletteService.onResult((result) => {
     io.emit('roulette:result', result);

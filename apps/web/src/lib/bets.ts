@@ -2,7 +2,7 @@ import { getRouletteColor } from '@bcf/shared-types';
 
 /**
  * Zakłady są na tym etapie w pełni lokalne (fake punkty w localStorage).
- * Gdy dojdzie Supabase, rozliczanie przeniesiemy na serwer — kształt `Bet` zostaje.
+ * Gdy dojdzie Supabase, rozliczanie przeniesiemy na serwer - kształt `Bet` zostaje.
  */
 export type OutsideBetKind = 'red' | 'black' | 'green' | 'even' | 'odd' | 'low' | 'high';
 export type BetKind = OutsideBetKind | 'number';

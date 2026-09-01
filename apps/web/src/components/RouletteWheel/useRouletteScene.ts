@@ -5,8 +5,8 @@ import { useRouletteStore } from '@/stores/rouletteStore';
 
 /**
  * Cała warstwa three.js. Animacja jest funkcją czasu SERWERA
- * (`round.startedAt` + offset zegara), więc każdy widz — również ten, który
- * dołączył w połowie spinu — widzi kulkę w tym samym miejscu.
+ * (`round.startedAt` + offset zegara), więc każdy widz - również ten, który
+ * dołączył w połowie spinu - widzi kulkę w tym samym miejscu.
  */
 
 const TAU = Math.PI * 2;
@@ -21,7 +21,7 @@ const BALL_REST_RADIUS = 2.62;
 const BALL_Y_TRACK = 0.46;
 const BALL_Y_REST = 0.28;
 
-/** Obrót jałowy koła — powolny, żeby scena nie była martwa między rundami. */
+/** Obrót jałowy koła - powolny, żeby scena nie była martwa między rundami. */
 const IDLE_SPEED = 0.12;
 const WHEEL_TURNS = 7;
 const BALL_TURNS = 16;
@@ -126,7 +126,7 @@ export function useRouletteScene(containerRef: RefObject<HTMLDivElement | null>)
     bowl.position.y = -0.02;
     wheel.add(bowl);
 
-    // 37 kieszeni jako wycinki walca — kąt liczony dokładnie, bez UV-owych sztuczek.
+    // 37 kieszeni jako wycinki walca - kąt liczony dokładnie, bez UV-owych sztuczek.
     const pocketMaterials: THREE.MeshStandardMaterial[] = [];
 
     EUROPEAN_WHEEL_ORDER.forEach((value, index) => {
@@ -170,7 +170,7 @@ export function useRouletteScene(containerRef: RefObject<HTMLDivElement | null>)
       fret.rotation.y = fretAngle;
       wheel.add(fret);
 
-      // Numer leży płasko, „górą" do środka koła — tak jak na prawdziwym kole.
+      // Numer leży płasko, „górą" do środka koła - tak jak na prawdziwym kole.
       const labelGroup = new THREE.Group();
       labelGroup.rotation.y = pocketTheta(index);
 
@@ -199,7 +199,7 @@ export function useRouletteScene(containerRef: RefObject<HTMLDivElement | null>)
     turret.position.y = 0.95;
     wheel.add(turret);
 
-    // Kulka celowo poza grupą koła — jej kąt liczymy w przestrzeni świata.
+    // Kulka celowo poza grupą koła - jej kąt liczymy w przestrzeni świata.
     const ball = new THREE.Mesh(
       track(new THREE.SphereGeometry(0.135, 28, 20)),
       track(new THREE.MeshStandardMaterial({ color: 0xf6f4ef, metalness: 0.15, roughness: 0.18 })),

@@ -21,7 +21,7 @@ export function BingoPage() {
         <div>
           <h1>{board.title}</h1>
           <p>
-            Kliknij pole, żeby postawić krzyżyk — zmiana od razu leci do wszystkich otwartych
+            Kliknij pole, żeby postawić krzyżyk - zmiana od razu leci do wszystkich otwartych
             przeglądarek. Treść pól ustawia admin.
           </p>
         </div>

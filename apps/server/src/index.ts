@@ -31,7 +31,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, uptime: process.uptime() });
 });
 
-/** Publiczny odczyt planszy — przydatny przy pierwszym renderze i do debugowania. */
+/** Publiczny odczyt planszy - przydatny przy pierwszym renderze i do debugowania. */
 app.get('/api/bingo', (_req, res) => {
   res.json(bingoService.getBoard());
 });
@@ -58,7 +58,7 @@ httpServer.listen(config.port, config.host, () => {
 });
 
 function shutdown(signal: string): void {
-  console.log(`[bcf] ${signal} — zapisuję stan i zamykam serwer.`);
+  console.log(`[bcf] ${signal} - zapisuję stan i zamykam serwer.`);
   store.flush();
   io.close();
   httpServer.close(() => process.exit(0));

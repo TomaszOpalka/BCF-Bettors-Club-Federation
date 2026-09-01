@@ -1,6 +1,6 @@
 # Konfiguracja Netlify dla frontendu (apps/web).
 # Netlify sam wykrywa root monorepo po tym pliku i package-lock.json w tym katalogu,
-# więc `npm install` uruchamia się raz na całe workspace — nie trzeba osobnego lockfile w apps/web.
+# więc `npm install` uruchamia się raz na całe workspace - nie trzeba osobnego lockfile w apps/web.
 
 [build]
   command = "npm run build -w @bcf/web"

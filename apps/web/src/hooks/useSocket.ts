@@ -5,7 +5,7 @@ import { useRouletteStore } from '@/stores/rouletteStore';
 
 /**
  * Jedyne miejsce, gdzie eventy socket.io lądują w store'ach.
- * Wywoływane raz, w `App` — strony czytają już tylko store.
+ * Wywoływane raz, w `App` - strony czytają już tylko store.
  */
 export function useSocket(): void {
   useEffect(() => {
