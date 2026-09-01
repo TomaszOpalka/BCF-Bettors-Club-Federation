@@ -1,0 +1,17 @@
+# Konfiguracja Netlify dla frontendu (apps/web).
+# Netlify sam wykrywa root monorepo po tym pliku i package-lock.json w tym katalogu,
+# więc `npm install` uruchamia się raz na całe workspace — nie trzeba osobnego lockfile w apps/web.
+
+[build]
+  command = "npm run build -w @bcf/web"
+  publish = "apps/web/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA routing: react-router-dom obsługuje ścieżki po stronie klienta,
+# więc każde bezpośrednie wejście na /ruletka czy /bingo/admin musi wrócić do index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

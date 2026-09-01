@@ -1,0 +1,25 @@
+# Konfiguracja "Blueprint" dla Render (https://dashboard.render.com → New → Blueprint).
+# Render sam wykryje ten plik po podłączeniu repo — trzeba tylko uzupełnić
+# 3 zmienne oznaczone `sync: false` (Render poprosi o nie w formularzu).
+services:
+  - type: web
+    name: bcf-server
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm run start -w @bcf/server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Hasło do panelu /bingo/admin — ustaw własne w formularzu Render.
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Długi losowy ciąg do podpisywania sesji admina (JWT).
+      - key: JWT_SECRET
+        sync: false
+      # Adres frontendu na Netlify, np. https://bcf-federation.netlify.app
+      # (bez ukośnika na końcu; można podać kilka adresów po przecinku).
+      - key: CORS_ORIGIN
+        sync: false

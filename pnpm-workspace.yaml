@@ -1,8 +1,0 @@
-packages:
-  - 'apps/*'
-  - 'packages/*'
-
-# Pakiety z natywnymi binarkami — muszą wykonać skrypt postinstall
-allowBuilds:
-  esbuild: true
-  '@parcel/watcher': true
