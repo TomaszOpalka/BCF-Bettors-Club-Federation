@@ -8,9 +8,9 @@ export function HomePage() {
 
       <h1 className={styles.title}>Bettors Club Federation</h1>
       <p className={styles.subtitle}>
-        Biurowa ruletka i bingo na żywo. Jedno losowanie, wszyscy widzą to samo - bez logowania,
-        bez instalacji, wystarczy otworzyć stronę.
+        Nie mamy darta, nie mamy bilarda -
       </p>
+      <h2>mamy ruletke</h2>
 
       <div className={styles.actions}>
         <Link to="/ruletka" className={`${styles.tile} ${styles.roulette}`}>

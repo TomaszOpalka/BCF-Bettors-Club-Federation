@@ -136,9 +136,44 @@
 }
 
 .footer {
-  padding: $space-5 $space-6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-3;
+  padding: $space-4 $space-6;
   border-top: 1px solid var(--bcf-border);
   font-size: 0.8rem;
   color: var(--bcf-text-muted);
-  text-align: center;
+  text-align: left;
+
+  @include below($bp-mobile) {
+    padding: $space-4;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.footerButton {
+  @include button-reset;
+  @include focus-ring;
+
+  flex-shrink: 0;
+  padding: $space-2 $space-4;
+  border-radius: var(--bcf-radius-pill);
+  background: var(--bcf-surface-raised);
+  border: 1px solid var(--bcf-border-strong);
+  color: var(--bcf-text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition:
+    color $transition-fast,
+    border-color $transition-fast,
+    background $transition-fast;
+
+  &:hover {
+    color: var(--bcf-text);
+    border-color: var(--bcf-text-muted);
+    background: var(--bcf-border);
+  }
 }

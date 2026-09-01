@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Bukiet kwiatów">
+  <defs>
+    <radialGradient id="petalPink" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffd9e8"/>
+      <stop offset="100%" stop-color="#e8447e"/>
+    </radialGradient>
+    <radialGradient id="petalGold" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="100%" stop-color="#e8a83c"/>
+    </radialGradient>
+    <radialGradient id="petalCoral" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffcbb0"/>
+      <stop offset="100%" stop-color="#e8623c"/>
+    </radialGradient>
+    <linearGradient id="wrap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0463d"/>
+      <stop offset="100%" stop-color="#9c231d"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ea86a"/>
+      <stop offset="100%" stop-color="#2f6b45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- łodygi: startują dokładnie od spodu kwiatów, zbiegają się w jeden pęk nad papierem -->
+  <g stroke="#2f6b45" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M118 168 C 128 220, 140 260, 150 288"/>
+    <path d="M282 168 C 272 220, 260 260, 250 288"/>
+    <path d="M150 217 C 158 245, 166 268, 173 288"/>
+    <path d="M250 217 C 242 245, 234 268, 227 288"/>
+    <path d="M200 234 L200 288"/>
+  </g>
+
+  <!-- liście: nałożone bezpośrednio na łodygi, bez przerwy -->
+  <g fill="url(#leaf)">
+    <ellipse cx="136" cy="235" rx="30" ry="12" transform="rotate(-52 136 235)"/>
+    <ellipse cx="264" cy="235" rx="30" ry="12" transform="rotate(52 264 235)"/>
+    <ellipse cx="184" cy="262" rx="24" ry="10" transform="rotate(-18 184 262)"/>
+  </g>
+
+  <!-- papier: zaczyna się dokładnie tam, gdzie kończą się łodygi -->
+  <path d="M108 284 L292 284 L242 366 L158 366 Z" fill="url(#wrap)"/>
+  <path d="M108 284 L292 284 L280 304 L120 304 Z" fill="#fff" opacity="0.14"/>
+  <rect x="108" y="284" width="184" height="14" fill="#7a1a15"/>
+
+  <!-- kwiaty: klaster u góry, spody kółek stykają się z górami łodyg -->
+  <g>
+    <circle cx="118" cy="140" r="28" fill="url(#petalCoral)"/>
+    <circle cx="118" cy="140" r="10" fill="#ffe27a"/>
+
+    <circle cx="282" cy="140" r="28" fill="url(#petalCoral)"/>
+    <circle cx="282" cy="140" r="10" fill="#ffe27a"/>
+
+    <circle cx="150" cy="185" r="32" fill="url(#petalPink)"/>
+    <circle cx="150" cy="185" r="11" fill="#ffe27a"/>
+
+    <circle cx="250" cy="185" r="32" fill="url(#petalPink)"/>
+    <circle cx="250" cy="185" r="11" fill="#ffe27a"/>
+
+    <circle cx="200" cy="150" r="40" fill="url(#petalGold)"/>
+    <circle cx="200" cy="150" r="14" fill="#c9432b"/>
+
+    <circle cx="200" cy="210" r="24" fill="#1fa463"/>
+    <circle cx="200" cy="210" r="8" fill="#eceae5"/>
+  </g>
+</svg>

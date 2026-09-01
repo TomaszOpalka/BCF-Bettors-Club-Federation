@@ -1,5 +1,6 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { FlowersModal } from '@/components/FlowersModal/FlowersModal';
 import { useRouletteStore } from '@/stores/rouletteStore';
 import styles from './AppLayout.module.scss';
 
@@ -10,6 +11,7 @@ const NAV_ITEMS = [
 
 export function AppLayout() {
   const connected = useRouletteStore((state) => state.connected);
+  const [flowersOpen, setFlowersOpen] = useState(false);
 
   return (
     <div className={styles.shell}>
@@ -48,7 +50,12 @@ export function AppLayout() {
 
       <footer className={styles.footer}>
         <span>Apka jest w pełni zvibe codowana nie podpisuję się pod nią testowałem możliwości</span>
+        <button type="button" className={styles.footerButton} onClick={() => setFlowersOpen(true)}>
+          Kwiaty dla Ali
+        </button>
       </footer>
+
+      {flowersOpen && <FlowersModal onClose={() => setFlowersOpen(false)} />}
     </div>
   );
 }
