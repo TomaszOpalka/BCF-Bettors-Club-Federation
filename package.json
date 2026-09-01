@@ -6,12 +6,16 @@
   "engines": {
     "node": ">=20"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "concurrently -n server,web -c green,cyan \"pnpm --filter @bcf/server dev\" \"pnpm --filter @bcf/web dev\"",
-    "build": "pnpm --filter @bcf/server build && pnpm --filter @bcf/web build",
-    "start": "pnpm --filter @bcf/server start",
-    "lint": "pnpm -r --if-present lint",
-    "typecheck": "pnpm -r --if-present typecheck"
+    "dev": "concurrently -n server,web -c green,cyan \"npm run dev -w @bcf/server\" \"npm run dev -w @bcf/web\"",
+    "build": "npm run build -w @bcf/server && npm run build -w @bcf/web",
+    "start": "npm run start -w @bcf/server",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces"
   },
   "devDependencies": {
     "concurrently": "^10.0.5",
