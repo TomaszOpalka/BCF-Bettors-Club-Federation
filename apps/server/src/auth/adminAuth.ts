@@ -67,9 +67,13 @@ export function isValidAdminToken(token: string | undefined): boolean {
   }
 }
 
+// Netlify (frontend) i Render (backend) to różne domeny — przeglądarka wysyła
+// ciasteczko cross-site tylko z SameSite=None (i wtedy Secure jest wymagane
+// przez specyfikację). Lokalnie frontend i backend są za jednym proxy Vite,
+// więc tam wystarcza (i jest bezpieczniejsze) SameSite=Lax.
 export const adminCookieOptions: CookieOptions = {
   httpOnly: true,
-  sameSite: 'lax',
+  sameSite: config.isProduction ? 'none' : 'lax',
   secure: config.isProduction,
   path: '/',
   maxAge: config.adminSessionTtlSeconds * 1000,
